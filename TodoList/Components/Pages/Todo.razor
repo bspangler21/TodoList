@@ -5,18 +5,21 @@
 
 <h1>Todo (@todos.Count(todo => !todo.IsDone))</h1>
 
-<ul>
+<div>
+@* <ul> *@
     @foreach (var todo in todos)
     {
-        <li>
-            <input type="checkbox" @bind="todo.IsDone" />
+        @* <li> *@
+            <input type="checkbox" @bind="todo.IsDone" style="width: 30px; height: 30px;" />
             <input @bind="todo.Title" />
-        </li>
+        @* </li> *@
     }
-</ul>
-
-<input placeholder="Something todo" @bind="newTodo" />
-<button @onclick="AddTodo">Add todo</button>
+@* </ul> *@
+</div>
+<br />
+    <br />
+    <input placeholder="Something todo" @bind="newTodo" />
+    <button @onclick="AddTodo">Add todo</button>
 
 @code {
     private List<TodoItem> todos = new();
